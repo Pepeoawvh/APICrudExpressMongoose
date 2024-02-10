@@ -1,9 +1,10 @@
 
 // IMPORTACIONES
 const EXPRESS = require("express");
+require("dotenv").config();
 const {connectDB} = require("./src/config/database/connectDB.js")
 const { userRouter } = require("./src/routes/users.routes.js");
-require("dotenv").config();
+
 
 // INSTANCIAS
 const app = EXPRESS();

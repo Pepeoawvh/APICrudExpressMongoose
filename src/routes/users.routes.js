@@ -1,15 +1,16 @@
 const express = require("express");
 const userRouter = express.Router();
-const {registerUser,editUser,deleteUser,getUserByEmail,logInUser} = require ("../controllers/users.controller.js")
+const {registerUser,editUser,deleteUser,getUserByEmail,logInUser} = require ("../controllers/users.controller.js");
+const { auth } = require("../middlewares/auth.js");
 
 
 userRouter.post("/register",registerUser);
 
-userRouter.patch("/edit",editUser);
+userRouter.patch("/edit",auth, editUser);
 
-userRouter.delete("/delete",deleteUser);
+userRouter.delete("/delete", auth ,deleteUser);
 
-userRouter.get("/get",getUserByEmail);
+userRouter.get("/get",auth,getUserByEmail);
 
 userRouter.post("/login",logInUser);
 
