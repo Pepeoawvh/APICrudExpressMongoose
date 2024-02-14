@@ -19,5 +19,5 @@ app.use(EXPRESS.json());
 // RUTAS
 app.use("/users", userRouter);
 app.listen(PUERTO, () => {
-  console.log(`${PUERTO} listening`);
+  console.log(`${PUERTO} listening OSEA CONECTADO`);
 });
